@@ -4,6 +4,9 @@
 //2. удаление повторяющихся цифр из числа
 //3. число которое делится на все числа
 //4. сдвиг поразрядно
+//5. прямоугольник
+//6. прямоугольник с вертикальной линией
+//7. прямоугольник с горизонтальной
 int main() {
     int choice = 0;
     printf("Choose program\n>");
@@ -119,5 +122,89 @@ int main() {
         result /= 10;
         printf("result: %d", result);
     }
+    if (choice == 5) {
+        int a;
+        int b;
+        scanf("%d", &a);
+        scanf("%d", &b);
+        int i,j;
+        for (i=0; i<a; i++) {
+            for (j = 0; j < b; j++) {
+                if (i == 0 || i == (a - 1)) {
+                    printf("# ");
+                } else {
+                    if (j == 0 || j == (b - 1)) {
+                        printf("# ");
+                    } else {
+                        printf("  ");
+                    }
+                }
+
+            }
+            printf("\n");
+        }
+
+    }
+    if (choice == 6) {
+        int a;
+        int b;
+        scanf("%d", &a);
+        scanf("%d", &b);
+        int i,j,g;
+        int d1=a/2;
+        for (i=0; i<a; i++) {
+            for (j = 0; j < b; j++) {
+                if (i == 0 || i == (a - 1)) {
+                    printf("# ");
+                } else {
+                    if (j == 0 || j == (b - 1)) {
+                        printf("# ");
+                    }
+                    else if ((j == d1) ) {
+                        printf("# ");
+                    }
+                    else {
+                        printf("  ");
+                    }
+
+
+                }
+
+            }
+            printf("\n");
+        }
+    }
+    if (choice == 7) {
+        int a;
+        int b;
+        scanf("%d", &a);
+        scanf("%d", &b);
+        int i,j,g;
+        int d1=a/2;
+        for (i=0; i<a; i++) {
+            for (j = 0; j < b; j++) {
+                if (i == 0 || i == (a - 1)) {
+                    printf("# ");
+                } else {
+                    if (j == 0 || j == (b - 1)) {
+                        printf("# ");
+                    }
+                    else if ((i == d1) ) {
+                        printf("# ");
+                    }
+                    else {
+                        printf("  ");
+                    }
+
+
+                }
+
+            }
+            printf("\n");
+        }
+    }
+
+
+
     return 0;
 }
