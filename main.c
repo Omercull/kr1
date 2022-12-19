@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <limits.h>
-//из 8 си в 10 си
-//сколько в 1 байте бит
-//
+//1. квадрат из решеток
+//2. удаление повторяющихся цифр из числа
+//3. число которое делится на все числа
 int main() {
     int choice = 0;
     printf("Choose program\n>");
@@ -73,6 +73,46 @@ int main() {
         int result = 0;
         for(int i = 0; i < len; i++) {
             result += array[i];
+            result *= 10;
+        }
+        result /= 10;
+        printf("result: %d", result);
+    }
+    if (choice == 3) {
+        int input = 1;
+        int i = 10;
+        while (i <= 10) {
+            if (input % i == 0)
+                i++;
+            else {
+                input++;
+                i = 1;
+            }
+        }
+        printf("%d", input);
+    }
+    if (choice == 4){
+        int input;
+        int n;
+        int len = 0;
+        int flag = 0;
+        scanf("%d", &input);
+        scanf("%d", &n);
+        int copy = input;
+        int k;
+        while (copy > 0) {
+            len++;
+            copy /= 10;
+        }
+        int array[len];
+        copy = input;
+        for (int i = len - 1; copy > 0; i--) {
+            array[i] = copy % 10;
+            copy /= 10;
+        }
+        int result = 0;
+        for(int i = 0; i < len; i++) {
+            result += array[i] + n;
             result *= 10;
         }
         result /= 10;
