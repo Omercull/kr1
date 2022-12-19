@@ -38,6 +38,7 @@ int main() {
     if (choice == 2){
         int input;
         int len = 0;
+        int flag = 0;
         scanf("%d", &input);
         int copy = input;
         int k;
@@ -60,10 +61,14 @@ int main() {
                             array[m] = array[k];
                             k++;
                         }
+                    flag = 1;
                     len--;
                 }
             }
-            i--;
+            if(flag) {
+                i--;
+                flag = 0;
+            }
         }
         int result = 0;
         for(int i = 0; i < len; i++) {
