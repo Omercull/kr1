@@ -50,8 +50,15 @@ int main() {
             array[i] = copy % 10;
             copy /= 10;
         }
-        for (int i = 0; i < len; i++) {
-            for (int j  = 0; j < )
+        for (int i = 0; i < len - 1; i++) {
+            for (int j  = i + 1; j < len; j++) {
+                if (array[i] == array[j]) {
+                    for (int k = j + 1; j <len; k++) {
+                        array[j] = array[k];
+                    }
+                    len--;
+                }
+            }
         }
         printf("done");
     }
