@@ -63,6 +63,7 @@ int main() {
                     len--;
                 }
             }
+            i--;
         }
         int result = 0;
         for(int i = 0; i < len; i++) {
