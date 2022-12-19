@@ -40,6 +40,7 @@ int main() {
         int len = 0;
         scanf("%d", &input);
         int copy = input;
+        int k;
         while (copy > 0) {
             len++;
             copy /= 10;
@@ -53,14 +54,23 @@ int main() {
         for (int i = 0; i < len - 1; i++) {
             for (int j  = i + 1; j < len; j++) {
                 if (array[i] == array[j]) {
-                    for (int k = j + 1; j <len; k++) {
-                        array[j] = array[k];
-                    }
+                    k = j + 1;
+                    if (k < len)
+                        for (int m = j; m < len -1; m++) {
+                            array[m] = array[k];
+                            k++;
+                        }
                     len--;
                 }
             }
         }
-        printf("done");
+        int result = 0;
+        for(int i = 0; i < len; i++) {
+            result += array[i];
+            result *= 10;
+        }
+        result /= 10;
+        printf("result: %d", result);
     }
     return 0;
 }
